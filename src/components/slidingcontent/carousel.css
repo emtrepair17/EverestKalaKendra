@@ -1,0 +1,79 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a12;
+  padding: 40px;
+  position: relative;
+  color: white;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text-section {
+  max-width: 450px;
+}
+
+.quote {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.name {
+  margin-top: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: white;
+}
