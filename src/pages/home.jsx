@@ -5,10 +5,15 @@ import { Typography } from "@mui/material";
 import { Grid, Card, CardContent, Dialog, DialogContent } from "@mui/material";
 import DoneIcon from '@mui/icons-material/Done';
 import InstructorCard from "@/components/card/InstructorCard";
-import ReactPlayer from "react-player";
-import StudentReview from "@/components/slidingcontent/SrudentReview";
+import StudentReview from "@/components/slidingcontent/StudentReview";
 
 const imgGalary = [
+  { img: "/img/img1.jpg" },
+  { img: "/img/img2.jpg" },
+  { img: "/img/img3.jpg" },
+  { img: "/img/img4.jpg" },
+  { img: "/img/img5.jpg" },
+  { img: "/img/img6.jpg" },
   { img: "/img/img1.jpg" },
   { img: "/img/img2.jpg" },
   { img: "/img/img3.jpg" },
@@ -48,41 +53,54 @@ export function Home() {
   return (
     <Box padding={5}>
       <Grid container spacing={2} marginTop={1}>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Card style={{ height: "100%", color: "white", backgroundColor: "#030511" }}>
             <CardContent
               style={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                height: "100%", // make CardContent fill the Card
-                padding: "16px", // optional
+                height: "100%",
+                padding: "16px",
               }}
             >
-              <Typography variant="h5" fontWeight="bold">
+              <Typography variant="h4" fontWeight="bold">
                 LEVEL UP YOUR DANCING
               </Typography>
 
-              <Typography>
+              <Typography variant="h6">
                 Train with the world’s top choreographers. Get on-demand online
+                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
+                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
                 dance classes right from your home.
               </Typography>
 
               <Typography>
-                Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.
+                Unlimited access for $100/month, billed monthly
               </Typography>
             </CardContent>
           </Card>
 
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={8}>
           <Card style={{ height: "100%" }}>
-            <img
-              src="/img/img1.jpg"
-              alt="Dance"
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+              <iframe
+                src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0"
+                title="YouTube video"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%"
+                }}
+              ></iframe>
+            </div>
+
           </Card>
         </Grid>
       </Grid>
@@ -94,7 +112,7 @@ export function Home() {
               <CardContent>
                 <Grid container spacing={2}>
                   {imgGalary.map((el, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Grid item xs={12} sm={6} md={3} key={index}>
                       <img
                         src={el.img}
                         alt={`Gallery ${index + 1}`}
@@ -125,7 +143,7 @@ export function Home() {
                   padding: "16px", // optional
                 }}
               >
-                <Typography variant="h5" fontWeight="bold">
+                <Typography variant="h4" fontWeight="bold">
                   Choose from 1,000+ On-Demand Dance Classes
                 </Typography>
 
@@ -147,6 +165,29 @@ export function Home() {
       </Box>
 
       <Box sx={{ pt: 7, color: "#ffffff" }}>
+                <Grid container spacing={2} direction="column">
+          <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Classes In Every Major Dance Style</Typography></Grid>
+        </Grid>
+        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+          <iframe
+            src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0"
+            title="YouTube video"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%"
+            }}
+          ></iframe>
+        </div>
+      </Box>
+
+
+      <Box sx={{ pt: 7, color: "#ffffff" }}>
         <Grid container spacing={2} direction="column">
           <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Meet Our Instructors</Typography></Grid>
           <Grid item sx={12}><Typography sx={{ textAlign: "center" }}>Get exclusive dance classes every week from 300+ top instructors who’ve worked with Beyoncé, Justin Bieber,  Dancing with the Stars, So You Think You Can Dance, and more!</Typography></Grid>
@@ -162,22 +203,8 @@ export function Home() {
       </Box>
 
       <Box sx={{ pt: 7, color: "#ffffff" }}>
-        <Grid container spacing={2} direction="column">
-          <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Classes In Every Major Dance Style</Typography></Grid>
-          <Grid item sx={12}>
-            <ReactPlayer
-              url="http://youtube.com/watch?v=tV2mf4bHzXQ"
-              controls
-              width="100%"
-              height="400px"
-            />
-          </Grid>
-        </Grid>
-      </Box>
-
-      <Box sx={{ pt: 7,color: "#ffffff" }}>
         <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">What our dance students are saying</Typography></Grid>
-        <StudentReview/>
+        <StudentReview />
       </Box>
 
       <Dialog open={open} onClose={handleClose} maxWidth="lg">

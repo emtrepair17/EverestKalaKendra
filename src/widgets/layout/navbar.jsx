@@ -55,7 +55,7 @@ export function Navbar({ brandName, routes }) {
                 // color: "#000",
                 textDecorationLine: "none",
                 fontWeight: "200",
-                fontSize: "16px",
+                fontSize: "14px",
                 letterSpacing: ".1em",
                 color: "#000",
                 fontStyle: "normal",
@@ -77,12 +77,12 @@ export function Navbar({ brandName, routes }) {
   );
 
   return (
-    <MTNavbar className="p-2 w-full max-w-full z-[1000]" style={{backgroundColor:"#030511"}}>
+    <MTNavbar className="p-2 w-full max-w-full z-[1000] shadow-none border-none" style={{backgroundColor:"#030511"}}>
       <div className="flex items-center justify-between w-full">
         {/* Logo on the Left */}
         <Link to="/">
           <Typography>
-            <img src="/img/lalaslogo.png" width="80px" height="auto" alt="Everest Logo" />
+            <img src="/img/Logo.png" width="50px" height="auto" alt="Everest Logo" />
           </Typography>
         </Link>
 
