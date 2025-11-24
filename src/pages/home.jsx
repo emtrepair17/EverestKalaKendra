@@ -52,6 +52,74 @@ export function Home() {
 
   return (
     <Box padding={5}>
+
+
+     <Box
+        sx={{
+          textAlign: "center",
+          py: 10,
+          // px: 4,
+          // mx: 4,
+          position: "relative",
+          overflow: "hidden",
+          minHeight: "70vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: [
+              'url("/img/img1.jpg")',
+              'url("/img/img2.png")',
+              'url("/img/img3.jpg")',
+            ],
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            // zIndex: -1,
+            animation: "changeBackground 6s infinite",
+          },
+          "@keyframes changeBackground": {
+            "0%": { backgroundImage: 'url("/img/img1.jpg")' },
+            "33%": { backgroundImage: 'url("/img/img2.png")' },
+            "66%": { backgroundImage: 'url("/img/img3.jpg")' },
+            "100%": { backgroundImage: 'url("/img/img1.jpg")' },
+          },
+        }}
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            // zIndex: -1,
+          }}
+        />
+
+        <Box position="relative" zIndex={1}>
+          <Typography
+            variant="h1"
+            sx={{ mb: 6, fontWeight: "bold", fontSize: { xs: "2.5rem", md: "4rem" }, color: "white", fontFamily:"Optima" }} // Increased font size
+          >
+            EVEREST KALA KENDRA USA
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{ fontSize: { xs: "1.5rem", md: "2rem" }, color: "white" }} // Increased font size
+          >
+            “नेपाली कला र संस्कृतिको उत्थान, हाम्रो पहिचान”
+          </Typography>
+        </Box>
+      </Box>
+
+
       <Grid container spacing={2} marginTop={1}>
         <Grid item xs={4}>
           <Card style={{ height: "100%", color: "white", backgroundColor: "#030511" }}>
@@ -164,7 +232,7 @@ export function Home() {
         </Grid>
       </Box>
 
-      <Box sx={{ pt: 7, color: "#ffffff" }}>
+      {/* <Box sx={{ pt: 7, color: "#ffffff" }}>
                 <Grid container spacing={2} direction="column">
           <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Classes In Every Major Dance Style</Typography></Grid>
         </Grid>
@@ -184,7 +252,7 @@ export function Home() {
             }}
           ></iframe>
         </div>
-      </Box>
+      </Box> */}
 
 
       <Box sx={{ pt: 7, color: "#ffffff" }}>
