@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -51,9 +51,7 @@ export function Home() {
   ]
 
   return (
-    <Box padding={5}>
-
-
+    <Box>
      <Box
         sx={{
           textAlign: "center",
@@ -74,20 +72,30 @@ export function Home() {
             width: "100%",
             height: "100%",
             backgroundImage: [
-              'url("/img/img1.jpg")',
-              'url("/img/img2.png")',
-              'url("/img/img3.jpg")',
+              'url("/img/home1.jpg")',
+              'url("/img/home2.jpg")',
+              'url("/img/home3.jpg")',
+              'url("/img/home4.jpg")',
+              'url("/img/home5.jpg")',
+              'url("/img/home6.jpg")',
+              'url("/img/home7.jpg")',
+              'url("/img/home8.jpg")',
             ],
             backgroundSize: "cover",
             backgroundPosition: "center",
             // zIndex: -1,
-            animation: "changeBackground 6s infinite",
+            animation: "changeBackground 20s infinite",
           },
           "@keyframes changeBackground": {
-            "0%": { backgroundImage: 'url("/img/img1.jpg")' },
-            "33%": { backgroundImage: 'url("/img/img2.png")' },
-            "66%": { backgroundImage: 'url("/img/img3.jpg")' },
-            "100%": { backgroundImage: 'url("/img/img1.jpg")' },
+            "0%": { backgroundImage: 'url("/img/home1.jpg")' },
+            "13%": { backgroundImage: 'url("/img/home2.jpg")' },
+            "23%": { backgroundImage: 'url("/img/home3.jpg")' },
+            "33%": { backgroundImage: 'url("/img/home4.jpg")' },
+            "43%": { backgroundImage: 'url("/img/home5.jpg")' },
+            "53%": { backgroundImage: 'url("/img/home6.jpg")' },
+            "66%": { backgroundImage: 'url("/img/home7.jpg")' },
+            "80%": { backgroundImage: 'url("/img/home8.jpg")' },
+            "100%": { backgroundImage: 'url("/img/home1.jpg")' },
           },
         }}
       >
@@ -106,9 +114,9 @@ export function Home() {
         <Box position="relative" zIndex={1}>
           <Typography
             variant="h1"
-            sx={{ mb: 6, fontWeight: "bold", fontSize: { xs: "2.5rem", md: "4rem" }, color: "white", fontFamily:"Optima" }} // Increased font size
+            sx={{ mb: 6, fontWeight: "bold", fontSize: { xs: "2.5rem", md: "4rem" }, color: "white" }} // Increased font size
           >
-            EVEREST KALA KENDRA USA
+             EVEREST KALA KENDRA USA
           </Typography>
           <Typography
             variant="subtitle1"
@@ -118,60 +126,6 @@ export function Home() {
           </Typography>
         </Box>
       </Box>
-
-
-      <Grid container spacing={2} marginTop={1}>
-        <Grid item xs={4}>
-          <Card style={{ height: "100%", color: "white", backgroundColor: "#030511" }}>
-            <CardContent
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%",
-                padding: "16px",
-              }}
-            >
-              <Typography variant="h4" fontWeight="bold">
-                LEVEL UP YOUR DANCING
-              </Typography>
-
-              <Typography variant="h6">
-                Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.
-              </Typography>
-
-              <Typography>
-                Unlimited access for $100/month, billed monthly
-              </Typography>
-            </CardContent>
-          </Card>
-
-        </Grid>
-        <Grid item xs={8}>
-          <Card style={{ height: "100%" }}>
-            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-              <iframe
-                src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0"
-                title="YouTube video"
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%"
-                }}
-              ></iframe>
-            </div>
-
-          </Card>
-        </Grid>
-      </Grid>
 
       <Box sx={{ pt: 5 }}>
         <Grid container spacing={2}>
@@ -231,6 +185,59 @@ export function Home() {
           </Grid>
         </Grid>
       </Box>
+
+            <Grid container spacing={2} marginTop={1}>
+        <Grid item xs={4}>
+          <Card style={{ height: "100%", color: "white", backgroundColor: "#030511" }}>
+            <CardContent
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "100%",
+                padding: "16px",
+              }}
+            >
+              <Typography variant="h4" fontWeight="bold">
+                LEVEL UP YOUR DANCING
+              </Typography>
+
+              <Typography variant="h6">
+                Train with the world’s top choreographers. Get on-demand online
+                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
+                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
+                dance classes right from your home.
+              </Typography>
+
+              <Typography>
+                Unlimited access for $100/month, billed monthly
+              </Typography>
+            </CardContent>
+          </Card>
+
+        </Grid>
+        <Grid item xs={8}>
+          <Card style={{ height: "100%" }}>
+            <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+              <iframe
+                src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0"
+                title="YouTube video"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%"
+                }}
+              ></iframe>
+            </div>
+
+          </Card>
+        </Grid>
+      </Grid>
 
       {/* <Box sx={{ pt: 7, color: "#ffffff" }}>
                 <Grid container spacing={2} direction="column">
