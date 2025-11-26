@@ -195,7 +195,7 @@ export function Home() {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-between",
+                justifyContent:"center",
                 height: "100%",
                 padding: "16px",
               }}
@@ -203,11 +203,11 @@ export function Home() {
               <Typography variant="h4" fontWeight="bold">
                 LEVEL UP YOUR DANCING
               </Typography>
-
+              <br/>
               <Typography variant="h6">
                 Train with a dedicated team of Nepali dance instructors, each bringing their unique experience, passion, and creative energy. Everest Kala Kendra offers in-person dance classes where students learn, grow, and stay connected to Nepali culture.
               </Typography>
-
+              <br/>
               <Typography>
                 Unlimited access for $100/month, billed monthly
               </Typography>
