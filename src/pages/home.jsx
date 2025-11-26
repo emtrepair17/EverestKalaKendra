@@ -39,19 +39,16 @@ export function Home() {
   };
 
   const Why = [
-    "Classes designed to fit your schedule",
-    "Variety of styles and levels",
-    "New classes every week",
-    "Learn dance fundamentals",
-    "Improve technique",
-    "Discover new styles",
-    "Strength & cardio training",
-    "World-renowned instructors",
-    "Professional development & advice"
+    "Beginner to advanced levels",
+    "Cultural & modern Nepali songs",
+    "Build confidence and technique",
+    "Weekly new classes",
+    "Family-friendly environment",
+    "Connect with Nepali community"
   ]
 
   return (
-    <Box>
+    <Box sx={{paddingLeft:"10px", paddingRight:"10px"}}>
      <Box
         sx={{
           textAlign: "center",
@@ -87,15 +84,15 @@ export function Home() {
             animation: "changeBackground 20s infinite",
           },
           "@keyframes changeBackground": {
-            "0%": { backgroundImage: 'url("/img/home1.jpg")' },
-            "13%": { backgroundImage: 'url("/img/home2.jpg")' },
-            "23%": { backgroundImage: 'url("/img/home3.jpg")' },
+            "0%": { backgroundImage: 'url("/img/newhome1.jpg")' },
+            "13%": { backgroundImage: 'url("/img/home6.jpg")' },
+            "23%": { backgroundImage: 'url("/img/home5.jpg")' },
             "33%": { backgroundImage: 'url("/img/home4.jpg")' },
-            "43%": { backgroundImage: 'url("/img/home5.jpg")' },
-            "53%": { backgroundImage: 'url("/img/home6.jpg")' },
+            "43%": { backgroundImage: 'url("/img/home2.jpg")' },
+            "53%": { backgroundImage: 'url("/img/home1.jpg")' },
             "66%": { backgroundImage: 'url("/img/home7.jpg")' },
             "80%": { backgroundImage: 'url("/img/home8.jpg")' },
-            "100%": { backgroundImage: 'url("/img/home1.jpg")' },
+            "100%": { backgroundImage: 'url("/img/newhome1.jpg")' },
           },
         }}
       >
@@ -129,12 +126,44 @@ export function Home() {
 
       <Box sx={{ pt: 5 }}>
         <Grid container spacing={2}>
+
+          <Grid item xs={12} md={6}>
+            <Card style={{ height: "100%", backgroundColor: "#030511", color: "#ffffff" }}>
+              <CardContent
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  // justifyContent: "space-between",
+                  height: "100%", // make CardContent fill the Card
+                  padding: "16px", // optional
+                  justifyContent:"center"
+                }}
+              >
+                <Typography variant="h3" fontWeight="bold">
+                  Nepali Dance Classes for Everyone
+                </Typography>
+                <br/>
+                <Typography variant="h5">
+                  Join Everest Kala Kendra and learn Nepali cultural, folk, and modern dance styles in a warm, community-friendly space.
+                </Typography>
+                <br/>
+                <Typography variant="h6">
+                  <ul>
+                    {Why.map((d, i) => (
+                      <li key={`${d}-${i}`}><DoneIcon color="primary" />{d}</li>
+                    ))}
+                  </ul>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+
           <Grid item xs={12} md={6}>
             <Card style={{ height: "100%", backgroundColor: "#030511" }}>
               <CardContent>
                 <Grid container spacing={2}>
                   {imgGalary.map((el, index) => (
-                    <Grid item xs={12} sm={6} md={3} key={index}>
+                    <Grid item xs={6} sm={6} md={3} key={index}>
                       <img
                         src={el.img}
                         alt={`Gallery ${index + 1}`}
@@ -144,6 +173,8 @@ export function Home() {
                           objectFit: "cover",
                           borderRadius: "8px",
                           cursor: "pointer",
+                          filter: "brightness(0.7)", // darker image
+                          transition: "0.3s ease",
                         }}
                         onClick={() => handleClick(el.img)}
                       />
@@ -154,40 +185,11 @@ export function Home() {
             </Card>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <Card style={{ height: "100%", backgroundColor: "#030511", color: "#ffffff" }}>
-              <CardContent
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  height: "100%", // make CardContent fill the Card
-                  padding: "16px", // optional
-                }}
-              >
-                <Typography variant="h4" fontWeight="bold">
-                  Choose from 1,000+ On-Demand Dance Classes
-                </Typography>
-
-                <Typography>
-                  CLI Studios is for dancers, by dancers. Learn at your pace on your schedule with our library of online dance classes in every style and level.
-                </Typography>
-
-                <Typography>
-                  <ul>
-                    {Why.map((d, i) => (
-                      <li key={`${d}-${i}`}><DoneIcon color="primary" />{d}</li>
-                    ))}
-                  </ul>
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
         </Grid>
       </Box>
 
-            <Grid container spacing={2} marginTop={1}>
-        <Grid item xs={4}>
+      <Grid container spacing={2} marginTop={1}>
+        <Grid item xs={12} sm={6} md={4}>
           <Card style={{ height: "100%", color: "white", backgroundColor: "#030511" }}>
             <CardContent
               style={{
@@ -203,10 +205,7 @@ export function Home() {
               </Typography>
 
               <Typography variant="h6">
-                Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.Train with the world’s top choreographers. Get on-demand online
-                dance classes right from your home.
+                Train with a dedicated team of Nepali dance instructors, each bringing their unique experience, passion, and creative energy. Everest Kala Kendra offers in-person dance classes where students learn, grow, and stay connected to Nepali culture.
               </Typography>
 
               <Typography>
@@ -216,11 +215,11 @@ export function Home() {
           </Card>
 
         </Grid>
-        <Grid item xs={8}>
-          <Card style={{ height: "100%" }}>
+        <Grid item xs={12} sm={6} md={8}>
+          <Card style={{ height: "100%", backgroundColor: "#030511" }}>
             <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
               <iframe
-                src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0"
+                src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0&vq=hd1080"
                 title="YouTube video"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
@@ -239,45 +238,54 @@ export function Home() {
         </Grid>
       </Grid>
 
-      {/* <Box sx={{ pt: 7, color: "#ffffff" }}>
-                <Grid container spacing={2} direction="column">
+
+      <Box sx={{ pt: 10, color: "#ffffff" }}>
+        <Grid container spacing={4} direction="column">
           <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Classes In Every Major Dance Style</Typography></Grid>
-        </Grid>
-        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
-          <iframe
-            src="https://www.youtube.com/embed/tV2mf4bHzXQ?autoplay=1&mute=1&controls=0&rel=0"
-            title="YouTube video"
-            frameBorder="0"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%"
-            }}
-          ></iframe>
-        </div>
-      </Box> */}
-
-
-      <Box sx={{ pt: 7, color: "#ffffff" }}>
-        <Grid container spacing={2} direction="column">
-          <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Meet Our Instructors</Typography></Grid>
-          <Grid item sx={12}><Typography sx={{ textAlign: "center" }}>Get exclusive dance classes every week from 300+ top instructors who’ve worked with Beyoncé, Justin Bieber,  Dancing with the Stars, So You Think You Can Dance, and more!</Typography></Grid>
           <Grid item sx={12}>
             <Grid container spacing={4}>
-              <Grid item md={4}><InstructorCard name="Mukesh Adhikari" img="/img/img1.jpg" /></Grid>
-              <Grid item md={4}><InstructorCard name="Mukesh Adhikari" img="/img/img1.jpg" /></Grid>
-              <Grid item md={4}><InstructorCard name="Mukesh Adhikari" img="/img/img1.jpg" /></Grid>
+            <Grid item xs={12} md={12}>
+              <video
+                src="/img/everestdance.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  width: "100%",
+                  borderRadius: "10px",
+                  maxHeight: "700px",
+                  objectFit: "cover",
+                 }}
+              />
+            </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Box>
+
+
+      <Box sx={{ mt: 10, color: "#ffffff" }}>
+        <Grid container spacing={4} direction="column">
+          <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">Meet Our Instructors</Typography></Grid>
+          <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h6">
+            Our senior instructor brings many years of experience in art, dance, and acting, guiding students with depth and creativity.
+            A professional dance teacher leads structured training, backed by years of teaching Nepali cultural and modern dance.
+            Our young and energetic instructor adds fresh ideas, innovative choreography, and modern movement.
+            Together, they create a warm, supportive environment where students learn, grow, and celebrate Nepali culture.
+            </Typography></Grid>
+          <Grid item sx={12}>
+            <Grid container spacing={4} justifyContent="space-evenly">
+              <Grid item md={4}><InstructorCard name="Sarita Lamichhane" img="/img/instructor1.jpg" position="Founder" /></Grid>
+              <Grid item md={4}><InstructorCard name="Mukesh Adhikari" img="/img/instructor2.jpg" position="Instructor" /></Grid>
+              <Grid item md={4}><InstructorCard name="Samriddi Lamichhane" img="/img/img1.jpg" position="Co-Instructor" /></Grid>
             </Grid>
 
           </Grid>
         </Grid>
       </Box>
 
-      <Box sx={{ pt: 7, color: "#ffffff" }}>
+      <Box sx={{ pt: 10, color: "#ffffff" }}>
         <Grid item sx={12}><Typography sx={{ textAlign: "center" }} variant="h4" fontWeight="bold">What our dance students are saying</Typography></Grid>
         <StudentReview />
       </Box>
