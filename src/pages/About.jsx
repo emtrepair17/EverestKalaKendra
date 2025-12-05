@@ -1,6 +1,7 @@
 import React from "react";
-import { Typography, Box, useTheme, useMediaQuery, Grid } from "@mui/material";
+import { Typography, Box, useTheme, useMediaQuery, Grid, Button } from "@mui/material";
 import DoneIcon from '@mui/icons-material/Done';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 export function About() {
   const theme = useTheme();
@@ -26,35 +27,25 @@ export function About() {
 
   return (
     <>
-      <div className="relative flex h-[110vh] content-center items-center justify-center overflow-hidden">
-        <Grid container spacing={3} style={{ padding: "40px", fontFamily: "bodoni-moda,bodoni moda,serif",paddingTop:`${isMobileView&&"250px"}` }}>
-          <Grid md={6} xs={12}><img src="/img/galaryimg4.jpg" className="img-responsive" alt="" />{" "}</Grid>
-          <Grid md={6} xs={12}>
-            <div style={{ padding: "40px" }}>
-            <Typography style={{ fontSize: "40px", color: "#000000", fontFamily: "bodoni-moda,bodoni moda,serif" }}>About Us</Typography>
-              <p>{paragraph ? paragraph : "loading..."}</p>
-              <Typography style={{ fontSize: "25px", color: "#000000", fontFamily: "bodoni-moda,bodoni moda,serif", paddingTop:"30px" }}>Why Choose Us?</Typography>
-              
-              <Grid container>
-                <Grid item md={6} xs={12}>
-                <ul>
-                    {Why.map((d, i) => (
-                      <li key={`${d}-${i}`}><DoneIcon color="primary"/>{d}</li>
-                    ))}
-                  </ul>
-                </Grid>
-                <Grid item md={6} xs={12}>
-                <ul>
-                    {Why2.map((d, i) => (
-                      <li key={`${d}-${i}`}><DoneIcon color="primary"/>{d}</li>
-                    ))}
-                  </ul>
-                </Grid>
-              </Grid>
-              
-            </div>
+      <div  style={{ backgroundColor:"#ffffff"}}>
+      <Grid container spacing={4}>
+        <Grid item sx={12} md={8}><Typography variant="h1" sx={{ fontWeight: '300' }}>Inspiring Nepali Dance, Creativity & Cultural Pride</Typography></Grid>
+        <Grid item sx={12} md={4}>
+          <Grid container spacing={6} direction="column">
+            <Grid item><Typography variant="h5">Since our beginning, Everest Kala Kendra has been a home for Nepali dance, culture and creativity — inspiring learners to express, perform and connect.</Typography></Grid>
+            <Grid item>
+              <Button endIcon={<ArrowDownwardIcon />} size="large" sx={{color:"black"}}>Explore More</Button>
+            </Grid>
           </Grid>
         </Grid>
+      </Grid>
+        
+      <Box mt={8}><img src="/img/home7.jpg" width="100%" height="auto" /></Box>
+
+      <Box mt={10}><Typography variant="h2" sx={{ fontWeight: '300' }}>Everest Kala Kendra was born from a vision to preserve Nepali culture and empower learners through dance, creativity, and artistic expression.</Typography></Box>  
+
+
+
       </div>
     </>
   );

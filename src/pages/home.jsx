@@ -278,7 +278,7 @@ export function Home() {
             <Grid container spacing={4} justifyContent="space-evenly">
               <Grid item md={4}><InstructorCard name="Sarita Lamichhane" img="/img/instructor1.jpg" position="Founder" /></Grid>
               <Grid item md={4}><InstructorCard name="Mukesh Adhikari" img="/img/instructor2.jpg" position="Instructor" /></Grid>
-              <Grid item md={4}><InstructorCard name="Samriddi Lamichhane" img="/img/img1.jpg" position="Co-Instructor" /></Grid>
+              <Grid item md={4}><InstructorCard name="Samriddee Lamichhane" img="/img/img1.jpg" position="Co-Instructor" /></Grid>
             </Grid>
 
           </Grid>
