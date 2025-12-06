@@ -40,8 +40,8 @@ const Contact = (props) => {
             );
     };
     return (
-        <div className="relative flex h-[150vh] content-center items-center justify-center overflow-hidden" style={{ background: "linear-gradient(to right, rgb(202, 207, 251) 0%, rgb(108, 169, 236) 100%)" }}>
-            <div className="container" style={{ marginTop: "40px", paddingLeft:`${isMobileView&&"20px"}`,paddingRight:`${isMobileView&&"20px"}` }}>
+        <div className="relative flex content-center items-center justify-center overflow-hidden" style={{ background: "#ffffff" }}>
+            <div className="container" style={{ marginTop: "40px",marginBottom: "40px", paddingLeft:`${isMobileView&&"20px"}`,paddingRight:`${isMobileView&&"20px"}` }}>
 
                 <Grid container spacing={3}>
                     <Grid item md={8} sm={6} xs={12}>
@@ -52,7 +52,7 @@ const Contact = (props) => {
                                 get back to you as soon as possible.
                             </p>
                         </div>
-                        <form name="sentMessage" validate onSubmit={handleSubmit} style={{ background: "#fff", padding: "20px", marginTop:`${isMobileView&&"60px"}` }}>
+                        <form name="sentMessage" validate onSubmit={handleSubmit} style={{ padding: "20px", marginTop:`${isMobileView&&"60px"}` }}>
 
                             <Grid container spacing={4} direction="column">
                                 <Grid item>
@@ -86,30 +86,30 @@ const Contact = (props) => {
 
                         </form>
                     </Grid>
-                    <Grid item md={4} sm={6} xs={12} style={{ marginTop: "70px", color:"#fff" }}>
+                    <Grid item md={4} sm={6} xs={12} style={{ marginTop: "70px" }}>
                     <Grid container spacing={4} direction="column">
                         <Grid item>                            
                             <Grid container spacing={1} direction="column">
                                 <Grid item><span><i className="fa fa-map-marker"></i> Address</span></Grid>
-                                <Grid item>1913 Baltimore-Reynoldsburg Rd, Reynoldsburg, OH 43068</Grid>
+                                <Grid item>10113 Taylor Rd SW, Reynoldsburg, OH 43068</Grid>
                             </Grid> 
                             </Grid>
                             <Grid item>
                             <Grid container spacing={1} direction="column">
                                 <Grid item><span><i className="fa fa-phone"></i> Phone</span></Grid>
-                                <Grid item>+1 (740) 918-9526</Grid>
+                                <Grid item>+1 (380) 269-9495</Grid>
                             </Grid>
                             </Grid>
                         <Grid item>                           
                              <Grid container spacing={1} direction="column">
                                 <Grid item><span><MailOutlineIcon/> Email</span></Grid>
-                                <Grid item>lalas2barbershop@gmail.com</Grid>
+                                <Grid item>everestkalakendra@gmail.com</Grid>
                             </Grid></Grid>
                         </Grid>
                     </Grid>
                 </Grid>
 
-                <div style={{ width: "100%", marginTop: "30px" }}>
+                <div style={{ width: "100%", marginTop: "30px"}}>
                     <iframe
                         width="100%"
                         height="600"
@@ -117,10 +117,10 @@ const Contact = (props) => {
                         scrolling="no"
                         marginHeight="0"
                         marginWidth="0"
-                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1913%20Baltimore-Reynoldsburg%20Rd,%20Reynoldsburg,%20OH%2043068+(Lalas2%20Barber%20Shop%20(Inside%20Famous%20Barber))&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=10113%20Taylor%20Rd%20SW,%20Reynoldsburg,%20OH%2043068+(Everest%20Kala%20Kendra)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                         title="LALAS2 Barber Shop Location"
                     >
-                        <a href="https://www.mapsdirections.info/it/calcola-la-popolazione-su-una-mappa/">
+                        <a href="https://www.mapsdirections.info/de/evolkerung-auf-einer-karte-berechnen/">
                         mappa della popolazione Italia
                         </a>
                     </iframe>
