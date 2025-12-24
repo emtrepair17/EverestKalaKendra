@@ -17,11 +17,11 @@ export const routes = [
     path: "/product",
     element: <About/>,
   },
-  // {
-  //   name: "Our Services",
-  //   path: "/service",
-  //   element: <Services/>,
-  // },
+  {
+    name: "Payment",
+    path: "/payment",
+    element: <Services/>,
+  },
   {
     name: "Contact",
     path: "/contact",
