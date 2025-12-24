@@ -9,7 +9,8 @@ function App() {
     <>
       {/* Navbar with fixed positioning and gray background */}
       <div className="w-full fixed top-0 z-50 shadow-sm" style={{fontFamily: "Optima,sans-serif", backgroundColor:"#030511"}}> {/* Changed to bg-gray-100 */}
-        <Navbar routes={routes} />
+        <Navbar routes={routes.filter(route => !route.hideInNavbar)} />
+
       </div>
 
       {/* Main content with proper padding to account for fixed navbar */}

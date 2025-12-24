@@ -4,6 +4,8 @@ import Home from "./pages/home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentFailure from "./pages/PaymentFailure";
 
 
 export const routes = [
@@ -27,16 +29,18 @@ export const routes = [
     path: "/contact",
     element: <Contact/>,
   },
-  // {
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  //   element: <Microsoldering />,
-  // },
-  // {
-  //   name: "Order",
-  //   path: "/order",
-  //   element: <Printing />,
-  // }
+  {
+    name: "Payment Success",
+    path: "/payment-success",
+    element: <PaymentSuccess />,
+    hideInNavbar: true,
+  },
+  {
+    name: "Payment Failure",
+    path: "/payment-failure",
+    element: <PaymentFailure />,
+    hideInNavbar: true,
+  }
 ];
 
 export default routes;
