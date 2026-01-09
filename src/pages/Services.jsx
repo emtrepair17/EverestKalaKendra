@@ -3,60 +3,78 @@ import * as React from 'react';
 import { Card, CardMedia, Typography, CardContent, Grid, Box, useTheme } from '@mui/material';
 import { Button } from '@material-tailwind/react';
 import { loadStripe } from "@stripe/stripe-js";
+import { useDispatch, useSelector } from "react-redux";
+import { loadUserDetails } from '@/action/registration';
+import Register from '@/components/registrationFrom/RegistrationFrom';
 
 function Payment() {
-    const theme = useTheme();
+  const theme = useTheme();
+  const dispatch = useDispatch();
 
-const handlepayment = async () => {
-  console.log("this is payment");
+  const handleApi = () => {
+    dispatch(loadUserDetails());
+  }
 
-  const body = {
-    products: [
-      {
-        address: "North Indian, Biryani, Mughlai",
-        dish: "punjabi",
-        id: 1,
-        price: 350,
-        qnty: 1,
-      },
-    ],
+  const handlepayment = async () => {
+
+
+    const body = {
+      products: [
+        {
+          address: "North Indian, Biryani, Mughlai",
+          dish: "punjabi",
+          id: 1,
+          price: 350,
+          qnty: 1,
+        },
+      ],
+    };
+
+    try {
+      const response = await fetch(
+        "http://localhost:4000/payment/create-checkout-session",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        }
+      );
+
+      const session = await response.json();
+
+      // ✅ NEW STRIPE WAY — redirect using URL
+      if (session.url) {
+        window.location.href = session.url;
+      } else {
+        console.error("Stripe session URL not found", session);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+    }
   };
 
-  try {
-    const response = await fetch(
-      "http://localhost:4000/payment/create-checkout-session",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      }
-    );
 
-    const session = await response.json();
+  return (
+    <Box sx={{
+      py: 8,
+      px: 2,
+      backgroundColor: theme.palette.background.default
+    }}>
+      <Button onClick={() => handlepayment()}>Payment</Button>
+      <br />
+      <br />
+      <br />
+      <Button onClick={() => handleApi()}>Api check</Button>
+      <br />
+      <br />
+      <br />
 
-    // ✅ NEW STRIPE WAY — redirect using URL
-    if (session.url) {
-      window.location.href = session.url;
-    } else {
-      console.error("Stripe session URL not found", session);
-    }
-  } catch (error) {
-    console.error("Payment error:", error);
-  }
-};
+      <Register />
 
-    
-    return (
-        <Box sx={{ 
-            py: 8,
-            px: 2,
-            backgroundColor: theme.palette.background.default
-        }}>
-            <Button onClick={()=> handlepayment()}>Payment</Button>
-        </Box>
-    );
+    </Box>
+  );
 }
 
 export default Payment;
